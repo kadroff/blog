@@ -1,0 +1,13 @@
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<%= image_tag(@post.image_url) if @post.image? %>
+
+<%= link_to 'Назад', posts_path %>

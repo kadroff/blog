@@ -1,0 +1,7 @@
+<%= form_for :post, url: post_path(@post), method: :patch do |f| %>
+    Name: <%= f.text_field :name %> <br>
+    Content: <%= f.text_area :content %> <br>
+    <%= f.submit %>
+<% end %>
+
+<% link_to 'Назад', posts_path %>
