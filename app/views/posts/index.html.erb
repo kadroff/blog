@@ -1,7 +1,9 @@
 <ul>
   <% @posts.each do |post| %>
       <li>
-        <h1><%= post.name %></h1>
+        <%=link_to(post) do%>
+          <h1><%= post.name %></h1>
+        <% end %>
         <p><%= post.content %></p>
         <%= image_tag(post.image.url, alt: 'Image', width: 320) if post.image? %>
         <span><%= post.created_at %></span>
