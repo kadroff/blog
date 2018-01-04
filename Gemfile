@@ -21,6 +21,10 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'carrierwave', '~> 1.0'
 
+# ActiveAdmin
+gem 'devise', '> 4.x'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', git: 'https://github.com/activeadmin/inherited_resources'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

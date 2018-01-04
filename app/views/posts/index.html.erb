@@ -1,17 +1,24 @@
-<ul>
-  <% @posts.each do |post| %>
-      <li>
-        <%=link_to(post) do%>
-          <h1><%= post.name %></h1>
-        <% end %>
-        <p><%= post.content %></p>
-        <%= image_tag(post.image.url, alt: 'Image', width: 320) if post.image? %>
-        <span><%= post.created_at %></span>
-        <%= link_to 'Удалить', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= link_to 'Редактировать', edit_post_path(post) %>
-      </li>
-  <% end %>
-</ul>
+<div class="header">
+  <p>I <span>write</span> here</p>
+</div>
 
-<%= link_to "Создать", new_post_path %>
+<div class="main">
+  <div class="container">
+    <% @posts.each do |post| %>
 
+      <div class="post">
+        <h1><%= post.name %></h1>
+        <p class="time"><%= post.created_at %></p>
+        <div class="image">
+          <%= image_tag(post.image.url, alt: 'Image', width: 320) if post.image? %>
+        </div>
+        <p class="content"><%= post.content %></p>
+        <div class="footer">
+          <a class="comments" href="#">43 комментария</a>
+          <%=link_to 'Перейти', (post)%>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>

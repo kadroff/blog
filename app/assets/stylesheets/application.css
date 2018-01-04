@@ -10,6 +10,122 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+/* Header */
+.header {
+    background:
+            linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(image.jpg) no-repeat center center fixed;
+    height: 450px;
+    background-size: cover;
+}
+
+.header p {
+    font-weight: 200;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    padding-top: 260px;
+}
+
+.header span {
+    color: aquamarine;
+}
+
+/* main block */
+.main {
+    margin-top: 80px;
+}
+
+.time {
+    color: gray;
+}
+
+.content {
+    padding-top: 40px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.image {
+    height: 300px;
+    overflow: hidden;
+}
+
+img {
+    padding-top: 30px;
+    width: 100%;
+}
+
+.footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Show.html */
+
+.show_link {
+    position: fixed;
+    left: 20px;
+    top: 30px;
+}
+
+.comments_block  {
+    margin-top: 80px;
+}
+
+.comment_title {
+    color: gray;
+    font-size: 15px;
+    text-decoration: underline
+}
+
+.comments_list {
+    margin-top: 50px;
+}
+
+.comments_list h1 {
+    font-size: 15px;
+}
+
+.comments_list li {
+    list-style-type: none;
+    margin-top: 40px;
+}
+
+.comment_input {
+    margin-top: 80px;
+}
+
+.name {
+    margin-top: 40px;
+    width: 50%;
+}
+
+.content {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.comment_send {
+    margin-top: 20px;
+    width: 100px;
+    border: 1px blue solid;
+    background-color: white;
+}
