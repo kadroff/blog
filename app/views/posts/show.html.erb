@@ -1,42 +1,32 @@
-<p>
-  <strong>Name:</strong>
-  <%= @post.name %>
-</p>
+  <%= link_to 'Назад', posts_path, class: "show_link" %> 
+  <div class="container">
+    <div class="post">
+      <h1> <%= @post.name %></h1>
+      <p class="time">21:28</p>
+      <div class="image">
+        <%= image_tag(@post.image_url, width: 320) if @post.image? %>
+      </div>
+      <p class="content"> <%= @post.content %></p>
+      <div class="comments_block">
+        <h1 class="comment_title">Комментарии:</h1>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-<%= image_tag(@post.image_url, width: 320) if @post.image? %>
-
-
-<h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-    <p>
-      <strong>Commenter:</strong>
-      <%= comment.commenter %>
-    </p>
-
-    <p>
-      <strong>Comment:</strong>
-      <%= comment.body %>
-    </p>
-<% end %>
-
-<h2>Add a comment:</h2>
-<%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
-    <p>
-      <%= form.label :commenter %><br>
-      <%= form.text_field :commenter %>
-    </p>
-    <p>
-      <%= form.label :body %><br>
-      <%= form.text_area :body %>
-    </p>
-    <p>
-      <%= form.submit %>
-    </p>
-<% end %>
-
-<%= link_to 'Назад', posts_path %>
+        <ul class="comments_list">
+        <% @post.comments.each do |comment| %>
+          <li>
+            <h1><%= comment.commenter %></h1>
+            <p> <%= comment.body %> </p>
+          </li>
+          <% end %>
+        </ul>
+        <div class="comment_input">
+          <h3>Оставить комментарии</h1>
+          <%= form_with(model: [ @post, @post.comments.build ], local: true) do |form| %>
+           <label>Имя:</label>
+          <%= form.text_field :commenter, class: "name" %>
+           <%= form.text_area :body, class: "content" %>
+           <%= form.submit %>
+          <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
