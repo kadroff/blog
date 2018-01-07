@@ -87,6 +87,12 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  Dynopoker.configure do |config|
+    config.address = 'http://wakemydyno.com'
+  #  config.enable = false # default is true
+  #  config.poke_frequency = 123 # default is 1800s (30min)
+  end
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end

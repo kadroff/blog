@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'carrierwave', '~> 1.0'
-
+gem 'dynopoker'
 # ActiveAdmin
 gem 'devise', '> 4.x'
 gem 'activeadmin', github: 'activeadmin'
